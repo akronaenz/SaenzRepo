@@ -1,12 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/register_page')
-def register():
-    return render_template("register.html")
+from routes.route import *
 
 if __name__ == "__main__":
-    ip = "172.31.13.216"
-    port = "80"
-    app.run(ip, port)
+    ip = "0.0.0.0"
+    port = "5000"
+    app.run(ip, port, debug=True)
